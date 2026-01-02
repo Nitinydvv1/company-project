@@ -1,8 +1,8 @@
-# 🚨 Emergency Dispatch Dashboard
+#  Emergency Dispatch Dashboard
 
 An AI-powered emergency response coordination system with real-time incident tracking, unit dispatch, and performance metrics.
 
-## 📋 Features
+## Features
 
 - **Interactive Map View** - Real-time visualization of incidents and units using Leaflet.js
 - **AI-Driven Severity Classification** - Automatic incident classification using OpenAI GPT
@@ -12,7 +12,7 @@ An AI-powered emergency response coordination system with real-time incident tra
 - **REST API** - Full CRUD operations for incidents and units
 - **MongoDB Storage** - Geospatial queries for location-based operations
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React.js, Leaflet.js, Vite
 - **Backend**: Node.js, Express.js
@@ -20,7 +20,7 @@ An AI-powered emergency response coordination system with real-time incident tra
 - **AI**: OpenAI GPT API for incident classification
 - **Deployment**: Docker, Docker Compose
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -76,7 +76,7 @@ docker-compose up -d
 open http://localhost:3000
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Request/
@@ -101,7 +101,7 @@ Request/
 └── docker-compose.yml
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### Incidents
 
@@ -113,7 +113,7 @@ Request/
 - `GET /api/units` - Get all units
 - `POST /api/units` - Create new unit
 
-## 📊 Sample Data Generator
+##  Sample Data Generator
 
 Generate test incidents:
 
@@ -127,7 +127,7 @@ node scripts/generateIncidents.js 5
 node scripts/generateIncidents.js 10 --ai
 ```
 
-## 🎯 Dispatch Workflow
+##  Dispatch Workflow
 
 1. **View Incidents** - See all active incidents on the map (color-coded by severity)
 2. **Select Incident** - Click on an incident to view details
@@ -135,7 +135,7 @@ node scripts/generateIncidents.js 10 --ai
 4. **Assign Unit** - Select a unit and confirm dispatch
 5. **Track Response** - Monitor ETA and response metrics
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -153,7 +153,7 @@ Without OpenAI API key, the system uses keyword-based classification:
 - **Medium**: accident, crash, injury, assault, theft, etc.
 - **Low**: noise complaint, parking violation, lost pet, etc.
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Main Dashboard
 
@@ -166,7 +166,7 @@ Without OpenAI API key, the system uses keyword-based classification:
 - Shows available units sorted by distance
 - One-click dispatch to nearest unit
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -174,37 +174,37 @@ Without OpenAI API key, the system uses keyword-based classification:
 4. Push to the branch
 5. Open a Pull Request
 
-## 📄 License
+##  License
 
 MIT License - see LICENSE file for details
 
 ---
 
-## 🚑 Response Units
+##  Response Units
 
 The system comes pre-configured with 10 response units:
 
 | Unit ID | Name | Type | Initial Status |
 |---------|------|------|----------------|
-| AMB01 | Ambulance Alpha | 🚑 Ambulance | Available |
-| AMB02 | Ambulance Bravo | 🚑 Ambulance | Available |
-| AMB03 | Ambulance Charlie | 🚑 Ambulance | Busy |
-| FIRE01 | Fire Truck Delta | 🚒 Fire | Available |
-| FIRE02 | Fire Truck Echo | 🚒 Fire | Available |
-| FIRE03 | Fire Truck Foxtrot | 🚒 Fire | Busy |
-| POL01 | Police Unit Golf | 🚔 Police | Available |
-| POL02 | Police Unit Hotel | 🚔 Police | Available |
-| POL03 | Police Unit India | 🚔 Police | Busy |
-| POL04 | Police Unit Juliet | 🚔 Police | Available |
+| AMB01 | Ambulance Alpha |  Ambulance | Available |
+| AMB02 | Ambulance Bravo |  Ambulance | Available |
+| AMB03 | Ambulance Charlie |  Ambulance | Busy |
+| FIRE01 | Fire Truck Delta |  Fire | Available |
+| FIRE02 | Fire Truck Echo |  Fire | Available |
+| FIRE03 | Fire Truck Foxtrot |  Fire | Busy |
+| POL01 | Police Unit Golf |  Police | Available |
+| POL02 | Police Unit Hotel |  Police | Available |
+| POL03 | Police Unit India |  Police | Busy |
+| POL04 | Police Unit Juliet |  Police | Available |
 
-## 📝 Important Notes
+##  Important Notes
 
 - **Incidents are session-based**: All incidents are cleared when the backend server restarts
 - **Units persist**: Response units are stored permanently in MongoDB
 - **AI Classification**: Works with keyword-based fallback when OpenAI API key is not configured
 - **Auto-refresh**: Dashboard automatically refreshes every 10 seconds
 
-## 🧪 Testing the API
+##  Testing the API
 
 ```bash
 # Create a new incident (AI will classify severity)
@@ -226,4 +226,4 @@ curl http://localhost:5001/api/units
 
 ---
 
-**Built with ❤️ for emergency response teams**
+**Built for emergency response teams**
