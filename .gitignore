@@ -1,4 +1,18 @@
-node_modules
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Lock files (optional - remove if you want to track them)
 package-lock.json
-package.json
+
+# Environment files
 .env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
