@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: emergency-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=emergencyDB
+    networks:
+      - emergency-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: emergency-backend
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      - PORT=5001
+      - MONGODB_URI=mongodb://mongodb:27017/emergencyDB
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - NODE_ENV=production
+    depends_on:
+      - mongodb
+    networks:
+      - emergency-network
+
+  # Frontend React App
+  frontend:
+    build:
+      context: ./emergency-dashboard
+      dockerfile: Dockerfile
+    container_name: emergency-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - emergency-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  emergency-network:
+    driver: bridge
